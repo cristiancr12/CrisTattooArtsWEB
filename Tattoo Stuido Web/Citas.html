@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cristian Arts - Estudio de tatuajes. Arte, creatividad y diseños originales.">
+    <title>Cristian Arts | Tattoo Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Imagenes/CristinaArtLogo.png">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="Imagenes/CristinaArtLogo.png" alt="Cristian Arts Logo">
+            </a>
+            <p>• Arte que llevas en la piel •</p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html">Inicio</a>
+            <a href="policy.html">Política</a>
+            <a href="citas.html" class="active">Citas</a>
+        </div>
+    </nav>
+
+    <!-- APPOINTMENT FORM -->
+    <main class="form-container">
+
+        <div class="form-title">
+            <span>RESERVA TU CITA</span>
+            <h2>Solicita tu cita</h2>
+            <p>
+                Una vez que completes el formulario, me pondré en contacto contigo
+                mediante un mensaje de texto. Por favor, ten en cuenta que la
+                respuesta podría tardar hasta 24 horas.
+            </p>
+        </div>
+
+        <!-- CALENDAR -->
+        <section class="calendar-section" aria-label="Calendario de disponibilidad">
+            <div class="calendar-heading">
+                <span>AGENDA DE CITAS</span>
+                <h3>Consulta la disponibilidad</h3>
+                <p id="currentDate">Cargando fecha...</p>
+                <p class="calendar-clock" id="currentTime">Hora de República Dominicana: --:--:--</p>
+            </div>
+
+            <div class="calendar-navigation">
+                <button type="button" class="calendar-nav-button" id="previousMonth"
+                    aria-label="Mes anterior">&#8249;</button>
+                <h4 id="calendarMonth">Mes y año</h4>
+                <button type="button" class="calendar-nav-button" id="nextMonth"
+                    aria-label="Mes siguiente">&#8250;</button>
+            </div>
+
+            <div class="calendar-weekdays" aria-hidden="true">
+                <span>LUN</span><span>MAR</span><span>MIÉ</span>
+                <span>JUE</span><span>VIE</span><span>SÁB</span><span>DOM</span>
+            </div>
+
+            <div class="calendar-days" id="calendarDays"></div>
+
+            <div class="calendar-legend">
+                <div class="calendar-legend-item">
+                    <span class="calendar-legend-color legend-available"></span>
+                    Disponible
+                </div>
+                <div class="calendar-legend-item">
+                    <span class="calendar-legend-color legend-today"></span>
+                    Hoy
+                </div>
+                <div class="calendar-legend-item">
+                    <span class="calendar-legend-color legend-booked"></span>
+                    Ocupado
+                </div>
+            </div>
+
+            <div class="calendar-selection" id="calendarSelection" aria-live="polite">
+                Selecciona un día disponible para solicitar tu cita.
+            </div>
+
+            <p class="calendar-note">
+                Las fechas ocupadas se actualizan según las reservas registradas.
+                La selección de una fecha es una solicitud y no confirma la cita.
+            </p>
+        </section>
+
+        <!-- FORM -->
+        <form
+            id="appointmentForm"
+            action="https://formsubmit.co/ccr9612@gmail.com"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            <input type="hidden" name="_subject" value="Nueva solicitud de tatuaje - Cristian Arts">
+            <input type="hidden" name="_template" value="table">
+
+            <!-- La fecha elegida también se incluye en el correo -->
+            <input type="hidden" id="appointmentDate" name="Fecha solicitada" value="">
+
+            <div class="form-group">
+                <label for="name">Nombre completo <span class="required">*</span></label>
+                <input type="text" id="name" name="Nombre completo"
+                    placeholder="Escribe tu nombre completo" required
+                    maxlength="100" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico <span class="required">*</span></label>
+                <input type="email" id="email" name="email"
+                    placeholder="ejemplo@correo.com" required
+                    maxlength="150" autocomplete="email">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Número de celular <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="+1 (809) 000-0000" required
+                    maxlength="20" autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+                <label for="description">
+                    Descripción del tatuaje <span class="required">*</span>
+                </label>
+                <textarea id="description" name="Descripción del tatuaje"
+                    placeholder="Describe el tatuaje que deseas. Incluye tamaño aproximado, zona del cuerpo, estilo y cualquier otro detalle importante..."
+                    required maxlength="3000"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="photos">Fotografías de referencia</label>
+                <div class="upload-box">
+                    <p>Sube fotografías de ejemplo del tatuaje que deseas realizarte.</p>
+                    <input type="file" name="attachment" id="photos"
+                        accept="image/jpeg,image/png,image/webp" multiple>
+                    <div class="upload-info">
+                        Formatos permitidos: JPG, PNG y WEBP.
+                        <br>
+                        Tamaño total máximo: 10 MB.
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy">
+                <input type="checkbox" id="privacy" name="privacy"
+                    value="Aceptado" required>
+                <label for="privacy">
+                    Acepto que mis datos y fotografías sean utilizados para
+                    gestionar mi solicitud de cita y contactar conmigo.
+                </label>
+            </div>
+
+            <button type="submit" class="submit-button" id="submitButton">
+                ENVIAR SOLICITUD
+            </button>
+        </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Gracias por elegir mi arte.</p>
+        <p>© 2026 Cristian Arts. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        /*
+         * CONFIGURACIÓN DE DISPONIBILIDAD
+         *
+         * Agrega aquí SOLO fechas que realmente tengas ocupadas.
+         * Formato: "AAAA-MM-DD"
+         *
+         * Ejemplo:
+         * const fechasOcupadas = [
+         *     "2026-11-18",
+         *     "2026-11-22",
+         *     "2026-12-03"
+         * ];
+         *
+         * Esta lista es manual: no se sincroniza automáticamente con Google Calendar.
+        */
+        const fechasOcupadas = [];
+
+        const zonaHoraria = "America/Santo_Domingo";
+        const form = document.getElementById("appointmentForm");
+        const photos = document.getElementById("photos");
+        const button = document.getElementById("submitButton");
+        const dateInput = document.getElementById("appointmentDate");
+        const calendarDays = document.getElementById("calendarDays");
+        const calendarMonth = document.getElementById("calendarMonth");
+        const calendarSelection = document.getElementById("calendarSelection");
+
+        // Cambia este número si deseas utilizar otro WhatsApp.
+        // Formato: código de país + número, sin espacios ni signos.
+        const whatsappBusinessNumber = "18495717030";
+
+        let selectedDate = "";
+        let visibleYear;
+        let visibleMonth;
+
+        function getTodayInDominicanRepublic() {
+            const parts = new Intl.DateTimeFormat("en-CA", {
+                timeZone: zonaHoraria,
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit"
+            }).formatToParts(new Date());
+
+            const values = {};
+            parts.forEach(part => {
+                if (part.type !== "literal") values[part.type] = part.value;
+            });
+
+            return {
+                year: Number(values.year),
+                month: Number(values.month) - 1,
+                day: Number(values.day),
+                key: `${values.year}-${values.month}-${values.day}`
+            };
+        }
+
+        function makeDateKey(year, month, day) {
+            return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        }
+
+        function updateClock() {
+            const now = new Date();
+
+            document.getElementById("currentDate").textContent =
+                new Intl.DateTimeFormat("es-DO", {
+                    timeZone: zonaHoraria,
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }).format(now);
+
+            document.getElementById("currentTime").textContent =
+                "Hora de República Dominicana: " +
+                new Intl.DateTimeFormat("es-DO", {
+                    timeZone: zonaHoraria,
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    hour12: true
+                }).format(now);
+        }
+
+        function renderCalendar() {
+            const today = getTodayInDominicanRepublic();
+            const firstDay = new Date(visibleYear, visibleMonth, 1).getDay();
+            const daysInMonth = new Date(visibleYear, visibleMonth + 1, 0).getDate();
+
+            // Convierte domingo=0 a lunes=0 para el calendario.
+            const offset = (firstDay + 6) % 7;
+
+            calendarMonth.textContent = new Intl.DateTimeFormat("es-DO", {
+                month: "long",
+                year: "numeric"
+            }).format(new Date(visibleYear, visibleMonth, 1));
+
+            calendarDays.innerHTML = "";
+
+            for (let i = 0; i < offset; i++) {
+                const empty = document.createElement("div");
+                empty.className = "calendar-empty";
+                empty.setAttribute("aria-hidden", "true");
+                calendarDays.appendChild(empty);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const key = makeDateKey(visibleYear, visibleMonth, day);
+                const isPast = key < today.key;
+                const isToday = key === today.key;
+                const isBooked = fechasOcupadas.includes(key);
+
+                const dayButton = document.createElement("button");
+                dayButton.type = "button";
+                dayButton.className = "calendar-day";
+                dayButton.textContent = day;
+                dayButton.setAttribute("aria-label", `${day} de ${calendarMonth.textContent}`);
+
+                if (isToday) dayButton.classList.add("is-today");
+                if (isBooked) dayButton.classList.add("is-booked");
+                if (isPast) dayButton.classList.add("is-past");
+                if (selectedDate === key) dayButton.classList.add("is-selected");
+
+                if (isPast || isBooked) {
+                    dayButton.disabled = true;
+                    dayButton.title = isBooked ? "Fecha ocupada" : "Fecha pasada";
+                } else {
+                    dayButton.addEventListener("click", () => {
+                        selectedDate = key;
+                        dateInput.value = key;
+
+                        const readableDate = new Intl.DateTimeFormat("es-DO", {
+                            timeZone: zonaHoraria,
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }).format(new Date(`${key}T12:00:00-04:00`));
+
+                        calendarSelection.innerHTML =
+                            `Fecha seleccionada: <strong>${readableDate}</strong>`;
+
+                        renderCalendar();
+                    });
+                }
+
+                calendarDays.appendChild(dayButton);
+            }
+
+            const previousButton = document.getElementById("previousMonth");
+            const nextButton = document.getElementById("nextMonth");
+
+            previousButton.disabled =
+                visibleYear === today.year && visibleMonth <= today.month;
+
+            // Permite consultar hasta 12 meses hacia adelante.
+            const maxDate = new Date(today.year, today.month + 12, 1);
+            const nextDate = new Date(visibleYear, visibleMonth + 1, 1);
+            nextButton.disabled = nextDate > maxDate;
+        }
+
+        function changeMonth(amount) {
+            visibleMonth += amount;
+
+            if (visibleMonth < 0) {
+                visibleMonth = 11;
+                visibleYear--;
+            } else if (visibleMonth > 11) {
+                visibleMonth = 0;
+                visibleYear++;
+            }
+
+            renderCalendar();
+        }
+
+        document.getElementById("previousMonth")
+            .addEventListener("click", () => changeMonth(-1));
+
+        document.getElementById("nextMonth")
+            .addEventListener("click", () => changeMonth(1));
+
+        const today = getTodayInDominicanRepublic();
+        visibleYear = today.year;
+        visibleMonth = today.month;
+
+        updateClock();
+        renderCalendar();
+        setInterval(updateClock, 1000);
+
+        form.addEventListener("submit", function(event) {
+            // Comprobar que el cliente eligió una fecha.
+            if (!selectedDate) {
+                event.preventDefault();
+                alert("Por favor, selecciona un día disponible en el calendario.");
+                document.querySelector(".calendar-section").scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+                return;
+            }
+
+            // Verificar nuevamente que la fecha no esté ocupada.
+            if (fechasOcupadas.includes(selectedDate) ||
+                selectedDate < getTodayInDominicanRepublic().key) {
+                event.preventDefault();
+                alert("La fecha seleccionada ya no está disponible. Elige otra fecha.");
+                selectedDate = "";
+                dateInput.value = "";
+                renderCalendar();
+                return;
+            }
+
+            // VALIDAR FOTOGRAFÍAS
+            let totalSize = 0;
+
+            for (const file of photos.files) {
+                if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+                    event.preventDefault();
+                    alert("Solo puedes subir fotografías JPG, PNG o WEBP.");
+                    return;
+                }
+                totalSize += file.size;
+            }
+
+            // LÍMITE DE 10 MB
+            if (totalSize > 10 * 1024 * 1024) {
+                event.preventDefault();
+                alert("Las fotografías no pueden superar 10 MB en total.");
+                return;
+            }
+
+            // OBTENER INFORMACIÓN
+            const name = form.elements["Nombre completo"].value;
+            const email = form.elements["email"].value;
+            const phone = form.elements["phone"].value;
+            const description = form.elements["Descripción del tatuaje"].value;
+
+            // MENSAJE DE WHATSAPP
+            const message = [
+                "Hola Cristian Arts, he enviado una solicitud de tatuaje.",
+                "",
+                "Nombre: " + name,
+                "Correo: " + email,
+                "Celular: " + phone,
+                "Fecha solicitada: " + selectedDate,
+                "",
+                "Descripción del tatuaje: " + description
+            ].join("\n");
+
+            const whatsappURL =
+                "https://wa.me/" + whatsappBusinessNumber +
+                "?text=" + encodeURIComponent(message);
+
+            // Abrir WhatsApp sin detener el envío del formulario a FormSubmit.
+            window.open(whatsappURL, "_blank");
+
+            button.disabled = true;
+            button.textContent = "ENVIANDO SOLICITUD...";
+        });
+    </script>
+
+</body>
+</html>

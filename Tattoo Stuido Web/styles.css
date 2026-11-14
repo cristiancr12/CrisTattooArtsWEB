@@ -1,0 +1,915 @@
+
+/* =========================================
+   CRISTIAN ARTS - TATTOO STUDIO
+   ESTILO GENERAL
+========================================= */
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    background: #000000;
+    text-align: center;
+    padding: 30px 15px;
+    border-bottom: 1px solid #292929;
+}
+
+header img {
+    width: 300px;
+    max-width: 85%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+    object-fit: contain;
+}
+
+header p {
+    color: #d4af37;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+/* LOGO COMO BOTÓN */
+
+.logo-link {
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo-link img {
+    display: block;
+}
+
+.logo-link:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    background: #111111;
+    border-bottom: 1px solid #333333;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 18px 0;
+}
+
+nav a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d4af37;
+}
+
+
+/* =========================================
+   SECTION TITLES
+========================================= */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.section-title p {
+    color: #999999;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-section {
+    padding: 80px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    overflow: hidden;
+    border-radius: 8px;
+    background: #181818;
+    border: 1px solid #292929;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   STUDIO LOGO
+========================================= */
+
+#malabareslogo {
+    padding: 40px 0;
+    text-align: center;
+}
+
+#malabareslogo img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   APPOINTMENT SECTION
+========================================= */
+
+#makeappoinments {
+    background: linear-gradient(
+        135deg,
+        #181818,
+        #080808
+    );
+
+    text-align: center;
+    padding: 80px 20px;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+
+#makeappoinments span {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+#makeappoinments h2 {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+#makeappoinments p {
+    color: #aaaaaa;
+    margin-bottom: 30px;
+}
+
+.appointment-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #d4af37;
+    color: #080808;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.appointment-button:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+#caracteristicas {
+    padding: 80px 0;
+    background: #0b0b0b;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px 15px;
+    background: #000000;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.feature-item:hover {
+    border-color: #d4af37;
+    transform: translateY(-5px);
+}
+
+.feature-item span {
+    color: #d4af37;
+    font-size: 28px;
+}
+
+.feature-item h3 {
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.feature-item p {
+    color: #999999;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   POLICY PAGE
+========================================= */
+
+.policy-section {
+    padding: 80px 0;
+    min-height: 500px;
+}
+
+.policy-container {
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.policy-card {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.policy-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+.policy-card h3 {
+    color: #d4af37;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.policy-card p {
+    color: #bbbbbb;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.policy-card ul {
+    color: #bbbbbb;
+    padding-left: 22px;
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/* =========================================
+   APPOINTMENT FORM
+========================================= */
+
+.form-container {
+    width: 90%;
+    max-width: 750px;
+    margin: 55px auto;
+    padding: 40px;
+    background: #141414;
+    border: 1px solid #333333;
+    border-radius: 10px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-title span {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.form-title h2 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.form-title p {
+    color: #999999;
+    font-size: 14px;
+}
+
+
+/* FORM FIELDS */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.required {
+    color: #d4af37;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: #080808;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d4af37;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777777;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+
+/* IMAGE UPLOAD */
+
+.upload-box {
+    padding: 25px;
+    text-align: center;
+    background: #080808;
+    border: 1px dashed #d4af37;
+    border-radius: 8px;
+}
+
+.upload-box p {
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.upload-box input[type="file"] {
+    width: 100%;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+.upload-info {
+    color: #888888;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+
+/* PRIVACY CHECKBOX */
+
+.privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 25px 0;
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.privacy input {
+    margin-top: 4px;
+    accent-color: #d4af37;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.privacy label {
+    cursor: pointer;
+}
+
+
+/* SUBMIT BUTTON */
+
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    background: #d4af37;
+    color: #080808;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #ffffff;
+}
+
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+
+/* BACK LINK */
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #050505;
+    border-top: 1px solid #292929;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer h3 {
+    color: #d4af37;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #888888;
+    font-size: 13px;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        padding: 25px 10px;
+    }
+
+    header img {
+        width: 230px;
+    }
+
+    header p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+
+    /* NAVIGATION */
+
+    .nav-container {
+        gap: 18px;
+        padding: 15px 0;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* TITLES */
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-section {
+        padding: 50px 0;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .grid-item img {
+        height: 300px;
+    }
+
+
+    /* FEATURES */
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* APPOINTMENTS */
+
+    #makeappoinments {
+        padding: 55px 15px;
+    }
+
+    #makeappoinments h2 {
+        font-size: 25px;
+    }
+
+
+    /* POLICY */
+
+    .policy-section {
+        padding: 50px 0;
+    }
+
+    .policy-card {
+        padding: 22px;
+    }
+
+    .policy-card h3 {
+        font-size: 17px;
+    }
+
+
+    /* FORM */
+
+    .form-container {
+        width: 94%;
+        padding: 25px 18px;
+        margin: 30px auto;
+    }
+
+    .form-title h2 {
+        font-size: 24px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .upload-box {
+        padding: 18px;
+    }
+
+    .submit-button {
+        font-size: 13px;
+        padding: 15px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px 15px;
+    }
+
+}
+
+
+/* =========================================
+   CALENDARIO DE DISPONIBILIDAD - CRISTIAN ARTS
+========================================= */
+
+.calendar-section {
+    margin: 35px 0 40px;
+    padding: 25px;
+    background: #090909;
+    border: 1px solid #383838;
+    border-radius: 9px;
+}
+
+.calendar-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.calendar-heading span {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.calendar-heading h3 {
+    color: #ffffff;
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.calendar-heading p {
+    color: #999999;
+    font-size: 13px;
+}
+
+.calendar-clock {
+    color: #d4af37 !important;
+    font-size: 13px !important;
+    margin-top: 7px;
+    font-variant-numeric: tabular-nums;
+}
+
+.calendar-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.calendar-navigation h4 {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.calendar-nav-button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background: #171717;
+    color: #d4af37;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-nav-button:hover:not(:disabled) {
+    background: #d4af37;
+    color: #080808;
+}
+
+.calendar-nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.calendar-weekdays {
+    margin-bottom: 8px;
+}
+
+.calendar-weekdays span {
+    color: #d4af37;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 0;
+}
+
+.calendar-day,
+.calendar-empty {
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+}
+
+.calendar-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #303030;
+    border-radius: 6px;
+    background: #171717;
+    color: #eeeeee;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-day:hover:not(:disabled) {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+.calendar-day.is-today {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.calendar-day.is-selected {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: #080808;
+    font-weight: bold;
+}
+
+.calendar-day.is-booked {
+    background: #482727;
+    border-color: #754040;
+    color: #f0b0b0;
+    text-decoration: line-through;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+.calendar-day.is-past {
+    color: #666666;
+    background: #101010;
+    border-color: #222222;
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px 18px;
+    margin-top: 20px;
+}
+
+.calendar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #aaaaaa;
+    font-size: 11px;
+}
+
+.calendar-legend-color {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.legend-available { background: #171717; border: 1px solid #555555; }
+.legend-today { background: #d4af37; }
+.legend-booked { background: #482727; border: 1px solid #754040; }
+
+.calendar-selection {
+    margin-top: 20px;
+    padding: 13px;
+    text-align: center;
+    background: #151515;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    color: #bbbbbb;
+    font-size: 13px;
+}
+
+.calendar-selection strong {
+    color: #d4af37;
+}
+
+.calendar-note {
+    margin-top: 12px;
+    color: #777777;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .calendar-section {
+        padding: 17px 12px;
+        margin: 28px 0 32px;
+    }
+
+    .calendar-heading h3 {
+        font-size: 20px;
+    }
+
+    .calendar-weekdays,
+    .calendar-days {
+        gap: 5px;
+    }
+
+    .calendar-day {
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .calendar-weekdays span {
+        font-size: 11px;
+    }
+
+    .calendar-legend {
+        gap: 10px;
+    }
+}
